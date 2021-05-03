@@ -1,14 +1,17 @@
+const cors = require("cors");
 const express = require("express");
-const bodyParser = require("body-parser");
 
 // create express app
 const app = express();
 
+//enable cors
+app.use(cors());
+
 // parse requests of content-type - application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 
 // parse requests of content-type - application/json
-app.use(bodyParser.json());
+app.use(express.json());
 
 // Configuring the database
 const { port, url } = require("./config/");
