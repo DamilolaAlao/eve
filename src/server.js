@@ -6,7 +6,7 @@ const app = express();
 
 //enable cors
 app.use(cors());
-
+app.options('*', cors());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
